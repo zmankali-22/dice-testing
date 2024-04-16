@@ -30,6 +30,7 @@ describe('As a Casual gamer...', () => {
  })
 
  describe("As a dungen master...", () => {
+
     describe("I want to roll a variety of dice sizes...", () => {
 
 
@@ -105,6 +106,21 @@ describe('As a Casual gamer...', () => {
         //     expect(result).toBeLessThanOrEqual(20)
         // })
         
+    })
+
+    test("... roll with disadvantage", () => {
+        let rollDiceWithDisadvantage = jest.fn().mockReturnValue({
+            finalResult: 1,
+            rolls: [1, 20]
+        })
+        let rollResult = rollDiceWithDisadvantage(20)
+
+        expect(rollResult.finalResult).toBe(1)
+    })
+
+    test.skip("... roll with advantages", () => {
+        let rollResult = null
+        expect(rollResult.finalResult).toBe(20)
     })
 
 
