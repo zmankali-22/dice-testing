@@ -106,6 +106,24 @@ describe('As a Casual gamer...', () => {
         // })
         
     })
+
+
+    test("... I want to see how many natural 20s I get in a session where I roll 1000 D20s",() =>{
+        let result = []
+        for (let i = 0; i < 1000; i++) {
+            result.push(rollDice(20))
+        }
+
+        console.log(result)
+        console.log(result.length)
+        
+
+        let arrayOfNatural20s = result.filter((r) => r === 20)
+        console.log("Number of natural 20s is ", arrayOfNatural20s.length)
+
+        expect(result.length).toBe(1000)
+        expect(result).toContain(20)
+    })
  })
     
         test('... I want to roll a 6 sided dice...', () => {
