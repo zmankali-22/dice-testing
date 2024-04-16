@@ -1,6 +1,21 @@
 const { rollDice } = require("../src/diceRolling")
 
 
+beforeEach(() => {
+    console.log("A test has been started...")
+})
+
+afterEach(() => {
+    console.log("A test has been completed...")
+})
+
+beforeAll(() => {
+    console.log("Testing will begin...")
+})
+
+afterAll(() => {
+    console.log("All Testing has ended...")
+})
 
 describe('As a Casual gamer...', () => {
     
